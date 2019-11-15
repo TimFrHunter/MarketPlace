@@ -47,7 +47,7 @@ class App extends Component {
             let clients = demande.map(client => {
               return <li>{client}</li>
             })
-            return <li>{demandeMapping[key]} : <ul>{clients}</ul></li>
+            return <li className="lastLi">{demandeMapping[key]} : <ul>{clients}</ul></li>
           }
           if(key == 0){
             return  <li>{demandeMapping[key]} : {demande / 10**18} Ether</li>

@@ -32,6 +32,9 @@ body {
 }
 
 .offresh4{
+  color: rgb(151, 38, 38);
+  font-weight: 900;
+  font-size: 18px;
   margin:0;
   margin-left: -1em;
   
@@ -69,6 +72,40 @@ body {
   font-weight: 600;
   text-decoration: none;
   transition: all .2s ease-in-out;
+  }
+
+  .list-type2 .lastLi{
+    margin-left:20px;
+    padding-left: 0.7em;
+    
+  }
+  .list-type2 .lastLi:before{
+      position:absolute;
+      left: -2.6em;
+      top:12%;
+  }
+  .list-type2 .lastLi:hover{
+    transform: none;
+    background:#FC756F;
+  }
+
+  .list-type2 .lastLi ul{
+    margin-left: 2em;
+    margin-top: 1em;
+
+  }
+  .list-type2 .lastLi ul li{
+    /* background: rgb(250, 144, 138); */
+    padding: 5px;
+    width:370px;
+  }
+
+  .list-type2 .lastLi ul li:hover{
+    background:rgb(250, 144, 138);
+  }
+  
+  .list-type2 .lastLi ul li:before{
+    content: none;
   }
   
   .list-type2 li:hover{

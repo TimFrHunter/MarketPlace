@@ -35,7 +35,8 @@ class App extends Component {
   renderOffres = () => {
     let {demandes} = this.state
     let res = []
-    const demandeMapping = ["Remuneration","Débute le","Description","Statut","Reputation minimum","Ayant Postulés"]
+    const demandeMapping = ["Remuneration","Durée","Description","Statut","Reputation minimum","Ayant Postulés"]
+    const demandeStatutMapping = ["Ouverture", "Encours", "Fermee"]
     
     if(typeof demandes == 'object'){
       for(let idx = 0;idx < demandes[0].length; idx++){
@@ -48,7 +49,15 @@ class App extends Component {
             })
             return <li>{demandeMapping[key]} : <ul>{clients}</ul></li>
           }
-          
+          if(key == 0){
+            return  <li>{demandeMapping[key]} : {demande / 10**18} Ether</li>
+          }
+          if(key == 1){
+            return  <li>{demandeMapping[key]} : {Math.floor(demande / 60)}H</li>
+          }
+          if(key == 3){
+            return  <li>{demandeMapping[key]} : {demandeStatutMapping[demande]}</li>
+          }
           return  <li>{demandeMapping[key]} : {demande}</li> 
         });
         res.push(<span className="list-type2"><h4 className="offresh4">Offre #{idx+1}</h4><ul>{lis}</ul></span>)

@@ -1,0 +1,22 @@
+{
+  "name": "defi2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TimFrHunter/alyraDefi2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TimFrHunter/alyraDefi2/issues"
+  },
+  "homepage": "https://github.com/TimFrHunter/alyraDefi2#readme",
+  "devDependencies": {
+    "create-react-app": "^3.2.0"
+  }
+}

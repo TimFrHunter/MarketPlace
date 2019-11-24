@@ -1,0 +1,169 @@
+.container{
+ 
+  padding-top:20px;
+}
+.offresH1{
+  color:black;
+  text-align: center;
+}
+
+.offresh4{
+  color: black;
+  font-weight: 900;
+  font-size: 18px;
+  margin:0;
+  margin-left: 0em;
+  
+}
+
+.list-type2{
+  display: inline-block;
+  width:500px;
+  margin:0 50px;
+  
+  }
+  
+  .list-type2 ul{
+  counter-reset: li;
+  list-style: none;
+  *list-style: decimal;
+  font-size: 15px;
+  font-family: 'Raleway', sans-serif;
+  padding: 0;
+  margin-bottom: 4em;
+  overflow: hidden;
+  }
+  
+  
+  
+  .list-type2 li{
+  position: relative;
+  display: block;
+  padding: .6em .4em .6em 2em;
+  *padding: .5em;
+  margin: .5em 0;
+  background:#2bb24c;
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all .2s ease-in-out;
+  }
+
+  .list-type2 li.description{
+    height:130px;
+  }
+
+  .list-type2 li.postuler{
+    color:white;
+    background:rgb(0, 0, 0);
+    cursor: pointer;
+    text-align: center;
+    padding:1em;
+    margin-left:-1em;
+  }
+  .list-type2 li.postuler:hover{
+    background:#2bb24c; /* rgb(122, 31, 24);*/
+    color: white;
+
+    
+  }
+  .list-type2 li.postuler:before{
+    content:none;
+  }
+  .list-type2 li.postuler.encours:hover{
+    transform: none;
+    background: rgb(119, 119, 119);
+    color: white;
+    cursor: default;
+  }
+
+  .list-type2 li.postuler.fermee:hover{
+    transform: none;
+    background: rgb(197, 24, 24);
+    color: white;
+    cursor: default;
+  }
+
+  .list-type2 li span.showPostulants{
+    padding: 5px 8px ;
+    margin-top:-4.5px;
+    border-radius: 0px;
+    float: right;
+    font-size: 14px;
+    background:white;
+    color:black;
+    cursor: pointer;
+    margin-right:10px;
+  }
+ 
+
+  
+  .list-type2 li:hover:not(.postuler){
+  
+  text-decoration:none;
+  transform: scale(1.05);
+  /* padding: .6em .4em .6em 2.4em; */
+  }
+  
+
+ul.postulants{
+  margin:30px 10px 10px 10px;
+ 
+  padding: 0;
+}
+
+ul.postulants li{
+ 
+  position: relative;
+  display: block;
+  padding: .6em 0;
+
+  margin: 2em 0;
+  background:#2bb24c;
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all .2s ease-in-out;
+}
+
+ul.postulants li span{
+  display: inline-block;
+  width:150px;
+  overflow: hidden;
+  
+}
+  
+ul.postulants li span:first-child{
+  text-transform: capitalize;
+  margin-left: 0.5em;
+
+  
+}
+
+ul.postulants li span:nth-child(2){
+  
+  
+  margin-left:5em
+}
+  
+ul.postulants button{
+  float: right;
+  margin-right:0.5em;
+  background:black;
+  color:white;
+  border:0;
+  font-weight: 600;
+  padding: 5px;
+  cursor: pointer;
+  transition: all .2s ease-in-out;
+}
+
+ul.postulants button:hover{
+  padding:5px 10px;
+}
+
+ul.postulants .annulerPopup{
+  float:right;
+  margin:15px 3px;
+}
+  

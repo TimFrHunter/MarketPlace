@@ -1,7 +1,7 @@
 {
     "networks" : {
         "5777" : {
-            "address": "0xd0c6f4159F8B60d18f570c6066978f76ce6fd1E1"
+            "address": "0x3907A7962Ac121D737943461B191e1bc4Cf1DB13"
         }
     },
     "abi" : [
@@ -9,41 +9,39 @@
             "constant": false,
             "inputs": [
                 {
-                    "components": [
-                        {
-                            "internalType": "uint256",
-                            "name": "remuneration",
-                            "type": "uint256"
-                        },
-                        {
-                            "internalType": "uint256",
-                            "name": "delay",
-                            "type": "uint256"
-                        },
-                        {
-                            "internalType": "string",
-                            "name": "description",
-                            "type": "string"
-                        },
-                        {
-                            "internalType": "enum MarketPlace.State",
-                            "name": "etat",
-                            "type": "uint8"
-                        },
-                        {
-                            "internalType": "uint256",
-                            "name": "minReputation",
-                            "type": "uint256"
-                        },
-                        {
-                            "internalType": "address[]",
-                            "name": "candidats",
-                            "type": "address[]"
-                        }
-                    ],
-                    "internalType": "struct MarketPlace.Demande",
-                    "name": "_demande",
-                    "type": "tuple"
+                    "internalType": "uint256",
+                    "name": "_indexDemande",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "address",
+                    "name": "_addrCandidat",
+                    "type": "address"
+                }
+            ],
+            "name": "accepterOffre",
+            "outputs": [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "constant": false,
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "_delay",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "string",
+                    "name": "_description",
+                    "type": "string"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "_minReputation",
+                    "type": "uint256"
                 }
             ],
             "name": "ajouterDemande",
@@ -62,6 +60,41 @@
                 }
             ],
             "name": "inscription",
+            "outputs": [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "constant": false,
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "_indexDemande",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "string",
+                    "name": "_lienLivrable",
+                    "type": "string"
+                }
+            ],
+            "name": "livraison",
+            "outputs": [],
+            "payable": true,
+            "stateMutability": "payable",
+            "type": "function"
+        },
+        {
+            "constant": false,
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "_indexDemande",
+                    "type": "uint256"
+                }
+            ],
+            "name": "postuler",
             "outputs": [],
             "payable": false,
             "stateMutability": "nonpayable",
@@ -97,6 +130,27 @@
             "constant": true,
             "inputs": [
                 {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "name": "attributionOffres",
+            "outputs": [
+                {
+                    "internalType": "address",
+                    "name": "",
+                    "type": "address"
+                }
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "constant": true,
+            "inputs": [
+                {
                     "internalType": "address",
                     "name": "",
                     "type": "address"
@@ -118,13 +172,18 @@
             "constant": true,
             "inputs": [
                 {
-                    "internalType": "address",
+                    "internalType": "uint256",
                     "name": "",
-                    "type": "address"
+                    "type": "uint256"
                 }
             ],
             "name": "demandes",
             "outputs": [
+                {
+                    "internalType": "address",
+                    "name": "employeur",
+                    "type": "address"
+                },
                 {
                     "internalType": "uint256",
                     "name": "remuneration",
@@ -149,6 +208,11 @@
                     "internalType": "uint256",
                     "name": "minReputation",
                     "type": "uint256"
+                },
+                {
+                    "internalType": "string",
+                    "name": "employeurName",
+                    "type": "string"
                 }
             ],
             "payable": false,
@@ -160,6 +224,16 @@
             "inputs": [],
             "name": "getAllDemandes",
             "outputs": [
+                {
+                    "internalType": "address[]",
+                    "name": "",
+                    "type": "address[]"
+                },
+                {
+                    "internalType": "string[]",
+                    "name": "",
+                    "type": "string[]"
+                },
                 {
                     "internalType": "uint256[]",
                     "name": "",
@@ -186,9 +260,9 @@
                     "type": "uint256[]"
                 },
                 {
-                    "internalType": "address[][]",
+                    "internalType": "uint256[]",
                     "name": "",
-                    "type": "address[][]"
+                    "type": "uint256[]"
                 }
             ],
             "payable": false,
@@ -214,22 +288,48 @@
             "constant": true,
             "inputs": [
                 {
-                    "internalType": "address",
-                    "name": "",
-                    "type": "address"
+                    "internalType": "uint256",
+                    "name": "_indexDemande",
+                    "type": "uint256"
                 }
             ],
-            "name": "users",
+            "name": "getLienLivrables",
             "outputs": [
                 {
                     "internalType": "string",
-                    "name": "username",
+                    "name": "",
                     "type": "string"
-                },
+                }
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "constant": true,
+            "inputs": [
                 {
                     "internalType": "uint256",
-                    "name": "reputation",
+                    "name": "_indexDemande",
                     "type": "uint256"
+                }
+            ],
+            "name": "getPostulantsByDemandesIndex",
+            "outputs": [
+                {
+                    "internalType": "address[]",
+                    "name": "",
+                    "type": "address[]"
+                },
+                {
+                    "internalType": "string[]",
+                    "name": "",
+                    "type": "string[]"
+                },
+                {
+                    "internalType": "uint256[]",
+                    "name": "",
+                    "type": "uint256[]"
                 }
             ],
             "payable": false,

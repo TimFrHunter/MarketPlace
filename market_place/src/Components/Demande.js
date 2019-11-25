@@ -69,7 +69,8 @@ class Demande extends Component {
         if(event === undefined)
             return 1;
         event.preventDefault();
-        this.state.contract.payableMethodes('ajouterDemande', parseInt(this.state.remuneration **18 ,10), [
+        console.log( parseInt(this.state.remuneration **18 ,10))
+        this.state.contract.payableMethodes('ajouterDemande', this.state.remuneration * 10 ** 18, [
             this.state.delay, 
             Converter.ascii_to_hexa(this.state.description),
             this.state.reputation

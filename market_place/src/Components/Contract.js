@@ -14,6 +14,7 @@ class Contract {
         const web3 = await new Web3(Web3.givenProvider)
         const accounts = await web3.eth.getAccounts()
         this.account = accounts[0]
+        console.log(this.account)
       
         const networkId =  await web3.eth.net.getId()  
         const networkData = await marketPlace.networks[networkId]

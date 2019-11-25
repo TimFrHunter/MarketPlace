@@ -1,28 +1,29 @@
 {
     "networks" : {
         "5777" : {
-            "address": "0x3907A7962Ac121D737943461B191e1bc4Cf1DB13"
+            "address": "0x8796D7D13D5c8BC84965e329c12C8a70B05A7b17"
         }
     },
     "abi" : [
         {
-            "constant": false,
+            "constant": true,
             "inputs": [
                 {
                     "internalType": "uint256",
                     "name": "_indexDemande",
                     "type": "uint256"
-                },
-                {
-                    "internalType": "address",
-                    "name": "_addrCandidat",
-                    "type": "address"
                 }
             ],
-            "name": "accepterOffre",
-            "outputs": [],
+            "name": "getLienLivrables",
+            "outputs": [
+                {
+                    "internalType": "string",
+                    "name": "",
+                    "type": "string"
+                }
+            ],
             "payable": false,
-            "stateMutability": "nonpayable",
+            "stateMutability": "view",
             "type": "function"
         },
         {
@@ -51,6 +52,37 @@
             "type": "function"
         },
         {
+            "constant": true,
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "_indexDemande",
+                    "type": "uint256"
+                }
+            ],
+            "name": "getPostulantsByDemandesIndex",
+            "outputs": [
+                {
+                    "internalType": "address[]",
+                    "name": "",
+                    "type": "address[]"
+                },
+                {
+                    "internalType": "string[]",
+                    "name": "",
+                    "type": "string[]"
+                },
+                {
+                    "internalType": "uint256[]",
+                    "name": "",
+                    "type": "uint256[]"
+                }
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
             "constant": false,
             "inputs": [
                 {
@@ -63,6 +95,36 @@
             "outputs": [],
             "payable": false,
             "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "constant": false,
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "_indexDemande",
+                    "type": "uint256"
+                }
+            ],
+            "name": "postuler",
+            "outputs": [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "constant": true,
+            "inputs": [],
+            "name": "getContractBalance",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "payable": false,
+            "stateMutability": "view",
             "type": "function"
         },
         {
@@ -89,21 +151,6 @@
             "constant": false,
             "inputs": [
                 {
-                    "internalType": "uint256",
-                    "name": "_indexDemande",
-                    "type": "uint256"
-                }
-            ],
-            "name": "postuler",
-            "outputs": [],
-            "payable": false,
-            "stateMutability": "nonpayable",
-            "type": "function"
-        },
-        {
-            "constant": false,
-            "inputs": [
-                {
                     "internalType": "address",
                     "name": "_user",
                     "type": "address"
@@ -121,12 +168,6 @@
             "type": "function"
         },
         {
-            "inputs": [],
-            "payable": false,
-            "stateMutability": "nonpayable",
-            "type": "constructor"
-        },
-        {
             "constant": true,
             "inputs": [
                 {
@@ -141,27 +182,6 @@
                     "internalType": "address",
                     "name": "",
                     "type": "address"
-                }
-            ],
-            "payable": false,
-            "stateMutability": "view",
-            "type": "function"
-        },
-        {
-            "constant": true,
-            "inputs": [
-                {
-                    "internalType": "address",
-                    "name": "",
-                    "type": "address"
-                }
-            ],
-            "name": "blacklist",
-            "outputs": [
-                {
-                    "internalType": "bool",
-                    "name": "",
-                    "type": "bool"
                 }
             ],
             "payable": false,
@@ -220,6 +240,47 @@
             "type": "function"
         },
         {
+            "constant": false,
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "_indexDemande",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "address",
+                    "name": "_addrCandidat",
+                    "type": "address"
+                }
+            ],
+            "name": "accepterOffre",
+            "outputs": [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "constant": true,
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "",
+                    "type": "address"
+                }
+            ],
+            "name": "blacklist",
+            "outputs": [
+                {
+                    "internalType": "bool",
+                    "name": "",
+                    "type": "bool"
+                }
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
             "constant": true,
             "inputs": [],
             "name": "getAllDemandes",
@@ -270,71 +331,10 @@
             "type": "function"
         },
         {
-            "constant": true,
             "inputs": [],
-            "name": "getContractBalance",
-            "outputs": [
-                {
-                    "internalType": "uint256",
-                    "name": "",
-                    "type": "uint256"
-                }
-            ],
             "payable": false,
-            "stateMutability": "view",
-            "type": "function"
-        },
-        {
-            "constant": true,
-            "inputs": [
-                {
-                    "internalType": "uint256",
-                    "name": "_indexDemande",
-                    "type": "uint256"
-                }
-            ],
-            "name": "getLienLivrables",
-            "outputs": [
-                {
-                    "internalType": "string",
-                    "name": "",
-                    "type": "string"
-                }
-            ],
-            "payable": false,
-            "stateMutability": "view",
-            "type": "function"
-        },
-        {
-            "constant": true,
-            "inputs": [
-                {
-                    "internalType": "uint256",
-                    "name": "_indexDemande",
-                    "type": "uint256"
-                }
-            ],
-            "name": "getPostulantsByDemandesIndex",
-            "outputs": [
-                {
-                    "internalType": "address[]",
-                    "name": "",
-                    "type": "address[]"
-                },
-                {
-                    "internalType": "string[]",
-                    "name": "",
-                    "type": "string[]"
-                },
-                {
-                    "internalType": "uint256[]",
-                    "name": "",
-                    "type": "uint256[]"
-                }
-            ],
-            "payable": false,
-            "stateMutability": "view",
-            "type": "function"
+            "stateMutability": "nonpayable",
+            "type": "constructor"
         }
     ]
 }

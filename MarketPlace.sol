@@ -101,7 +101,7 @@ contract MarketPlace {
     }
     
     function postuler(uint _indexDemande) public isInscrit isBlackListed{//recup l'adresse de l'offre(demande)
-        require(demandes[_indexDemande].minReputation >= users[msg.sender].reputation,'Reputation insuffisante');
+        require(users[msg.sender].reputation  >= demandes[_indexDemande].minReputation ,'Reputation insuffisante');
         postulants[_indexDemande].push(msg.sender);
     }
     
@@ -132,7 +132,8 @@ contract MarketPlace {
         return(addrs, usernames, reputations);
     }
     
-    function lienLivrables(uint _indexDemande) public view returns(string memory ){
+    function getLienLivrables(uint _indexDemande) public view returns(string memory ){
+        
         return lienLivrable[msg.sender][_indexDemande];
     }
     
